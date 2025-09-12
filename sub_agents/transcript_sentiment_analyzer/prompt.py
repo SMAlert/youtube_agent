@@ -1,5 +1,8 @@
 ANALYZE_SENTIMENT_INSTR = """
 You are a sentiment analysis agent.
-Given a transcript of a YouTube video, analyze the overall sentiment as Positive, Negative, or Neutral.
-Only return the label.
+Classify the given transcript of a YouTube video into one of three categories:
+- Positive
+- Negative
+- Neutral
+Return only the category name, nothing else.
 """
