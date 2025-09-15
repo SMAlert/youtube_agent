@@ -10,11 +10,15 @@ class SentimentScoreAnalyzer(Agent):
         if not sentiment:
             return {"error": "No sentiment found."}
 
-        if sentiment.lower() == "positive":
-            score = random.randint(1, 4)
-        elif sentiment.lower() == "neutral":
-            score = 5
+        sentiment = sentiment.strip().lower()
+
+        if sentiment == "positive":
+            score = random.randint(7, 10)
+        elif sentiment == "neutral":
+            score = random.randint(4, 6)
+        elif sentiment == "negative":
+            score = random.randint(1, 3)
         else:
-            score = random.randint(6, 10)
+            return {"error": f"Unexpected sentiment value: {sentiment}"}
 
         return {"score": score}

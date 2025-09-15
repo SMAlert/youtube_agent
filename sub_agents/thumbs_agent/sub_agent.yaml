@@ -1,0 +1,11 @@
+name: thumbs_agent
+description: Displays thumbs up/down/neutral based on sentiment score
+entry_point: thumbs_agent.py
+requirements: []
+triggers:
+  - type: manual
+    input: score
+output:
+  type: json
+  fields:
+    - thumbs

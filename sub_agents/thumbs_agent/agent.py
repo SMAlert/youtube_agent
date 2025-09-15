@@ -9,13 +9,15 @@ class ThumbsAgent(Agent):
         if not sentiment:
             return {"error": "No sentiment found."}
 
-        sentiment = sentiment.lower()
+        sentiment = sentiment.strip().lower()
 
         if sentiment == "positive":
             result = "Thumbs Up"
         elif sentiment == "negative":
             result = "Thumbs Down"
-        else:
+        elif sentiment == "neutral":
             result = "Neutral"
+        else:
+            return {"error": f"Unexpected sentiment value: {sentiment}"}
 
         return {"thumbs": result}
