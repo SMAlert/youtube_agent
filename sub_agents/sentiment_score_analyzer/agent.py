@@ -1,10 +1,11 @@
-from google.adk.agents import Agent, AgentContext, register_agent
+from google.adk.agents import Agent
 import random
 
-@register_agent("sentiment_score_analyzer")
 class SentimentScoreAnalyzer(Agent):
+    name: str = "sentiment_score_analyzer"
+    description: str = "Analyzes sentiment score"
 
-    async def run(self, context: AgentContext) -> dict:
+    async def run(self, context: dict) -> dict:
         sentiment = context.data.get("sentiment")
 
         if not sentiment:

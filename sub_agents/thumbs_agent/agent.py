@@ -1,9 +1,11 @@
-from google.adk.agents import Agent, AgentContext, register_agent
+from google.adk.agents import Agent
 
-@register_agent("thumbs_agent")
 class ThumbsAgent(Agent):
+    name: str = "thumbs_agent"
+    description: str = "Gives thumbs up/down/neutral based on sentiment"
 
-    async def run(self, context: AgentContext) -> dict:
+
+    async def run(self, context: dict) -> dict:
         sentiment = context.data.get("sentiment")
 
         if not sentiment:
