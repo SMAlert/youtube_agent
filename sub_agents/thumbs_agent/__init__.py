@@ -1,1 +1,1 @@
-from .agent import ThumbsAgent
+from .agent import thumbs_agent

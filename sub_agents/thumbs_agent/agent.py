@@ -2,8 +2,7 @@ from google.adk.agents import Agent
 
 class ThumbsAgent(Agent):
     name: str = "thumbs_agent"
-    description: str = "Gives thumbs up/down/neutral based on sentiment"
-
+    description: str = "Gives thumbs up/down/neutral based on sentiment."
 
     async def run(self, context: dict) -> dict:
         sentiment = context.data.get("sentiment")
@@ -14,12 +13,14 @@ class ThumbsAgent(Agent):
         sentiment = sentiment.strip().lower()
 
         if sentiment == "positive":
-            result = "Thumbs Up"
+            result = "up"
         elif sentiment == "negative":
-            result = "Thumbs Down"
+            result = "down"
         elif sentiment == "neutral":
-            result = "Neutral"
+            result = "neutral"
         else:
             return {"error": f"Unexpected sentiment value: {sentiment}"}
 
         return {"thumbs": result}
+
+thumbs_agent = ThumbsAgent()

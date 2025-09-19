@@ -1,9 +1,9 @@
 from google.adk.agents import Agent
 import random
 
-class SentimentScoreAnalyzer(Agent):
+class SentimentScoreAgent(Agent):
     name: str = "sentiment_score_analyzer"
-    description: str = "Analyzes sentiment score"
+    description: str = "Assigns a numeric score to sentiment."
 
     async def run(self, context: dict) -> dict:
         sentiment = context.data.get("sentiment")
@@ -23,3 +23,5 @@ class SentimentScoreAnalyzer(Agent):
             return {"error": f"Unexpected sentiment value: {sentiment}"}
 
         return {"score": score}
+
+sentiment_score_agent = SentimentScoreAgent()

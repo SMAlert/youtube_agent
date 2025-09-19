@@ -1,1 +1,1 @@
-from .agent import SentimentScoreAnalyzer
+from .agent import sentiment_score_agent
